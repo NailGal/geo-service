@@ -16,8 +16,9 @@ public class Main {
         LocalizationService localizationService = new LocalizationServiceImpl();
         MessageSender messageSender = new MessageSenderImpl(geoService, localizationService);
 
-        Map<String, String> headers = new HashMap<String, String>();
-        headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.123.12.19");
+        Map<String, String> headers = new HashMap<String, String>(); //создали объект
+        headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.123.12.19"); //присвоили ключ - значение
         messageSender.send(headers);
+
     }
 }

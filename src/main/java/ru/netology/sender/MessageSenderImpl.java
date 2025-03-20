@@ -14,11 +14,13 @@ public class MessageSenderImpl implements MessageSender {
 
     private final LocalizationService localizationService;
 
+    //Конструктор данного класса
     public MessageSenderImpl(GeoService geoService, LocalizationService localizationService) {
         this.geoService = geoService;
         this.localizationService = localizationService;
     }
 
+    // Реализация самого метода
     public String send(Map<String, String> headers) {
         String ipAddress = String.valueOf(headers.get(IP_ADDRESS_HEADER));
         if (ipAddress != null && !ipAddress.isEmpty()) {
